@@ -1,5 +1,7 @@
 from PyQt5.QtCore import QThread, pyqtSignal
 
+from ..utils import process_keys_from_log
+
 import json
 import os
 
@@ -15,6 +17,7 @@ class Worker(QThread):
         try:
             with open(self.file_path, 'r') as f:
                 data = json.load(f)
+                process_keys_from_log(data)
                 self.loaded.emit(os.path.basename(self.file_path))
         except Exception as e:
             self.failed.emit(os.path.basename(self.file_path), e)

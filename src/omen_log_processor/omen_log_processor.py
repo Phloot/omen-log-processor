@@ -10,7 +10,8 @@ import re
 
 from omen_log_processor.gui.gui import MainWindow
 
-app = QApplication(sys.argv)
-win = MainWindow()
-win.show()
-sys.exit(app.exec_())
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    win = MainWindow()
+    win.show()
+    sys.exit(app.exec_())

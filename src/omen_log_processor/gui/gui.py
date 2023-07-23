@@ -4,6 +4,7 @@ from PyQt5.QtGui import QIcon
 
 from omen_log_processor.gui.worker import Worker
 
+
 import json
 import pika
 import os
